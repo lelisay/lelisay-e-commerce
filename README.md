@@ -30,3 +30,18 @@ To set up the development environment:
 ```bash
 npm install
 npm start
+
+
+
+**##  Project Structure **
+├── public/          <- static files
+├── src/             <- React components and pages
+│   ├── assets/      <- images, icons, etc.
+│   ├── components/  <- reusable components
+│   ├── pages/       <- application pages
+│   ├── services/    <- API calls and business logic
+│   ├── App.js       <- main app component
+│   └── index.js     <- entry point
+├── .gitignore       <- files to ignore in version control
+├── package.json     <- project metadata and dependencies
+└── README.md        <- project documentation
