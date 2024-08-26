@@ -1,3 +1,3 @@
 # E-Commerce Template
 
-![true](lelisay/lelisay-e-commerce: This template is template everybody who want to make e-commerce can use to make (github.com))
+(https://github.com/lelisay/lelisay-e-commerce/tree/new-branch)
