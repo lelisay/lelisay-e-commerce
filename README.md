@@ -45,3 +45,16 @@ npm start
 ├── .gitignore       <- files to ignore in version control
 ├── package.json     <- project metadata and dependencies
 └── README.md        <- project documentation
+
+
+**Features**
+
+--> User Authentication: Sign up, login, and secure user sessions.
+--> Product Management: Add, edit, and manage product listings.
+--> Shopping Cart: Add items to the cart and proceed to checkout.
+--> Order Processing: Manage orders from creation to delivery.
+
+Author
+Lelisa Yohanes
+
+<h3 align="center">© 2024. All rights reserved.</h3>
