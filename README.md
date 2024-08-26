@@ -47,7 +47,7 @@ npm start
 └── README.md        <- project documentation
 
 
-**Features**
+## Features
 
 --> User Authentication: Sign up, login, and secure user sessions.
 --> Product Management: Add, edit, and manage product listings.
@@ -55,6 +55,6 @@ npm start
 --> Order Processing: Manage orders from creation to delivery.
 
 Author
-https://github.com/lelisay
+- [Lelisa Yohanes](https://github.com/Lelisayohanes/)
 
 <h3 align="center">© 2024. All rights reserved.</h3>
