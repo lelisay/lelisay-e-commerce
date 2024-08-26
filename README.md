@@ -24,14 +24,15 @@ This template is designed to work with the latest versions of Node.js and React.
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
+- 
 
 To set up the development environment:
 
 ```bash
 npm install
-npm start
+npm start 
 
-
+```
 
 **##  Project Structure **
 ├── public/          <- static files
