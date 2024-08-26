@@ -35,6 +35,7 @@ npm start
 ```
 
 **##  Project Structure **
+```bash
 ├── public/          <- static files
 ├── src/             <- React components and pages
 │   ├── assets/      <- images, icons, etc.
@@ -47,15 +48,17 @@ npm start
 ├── package.json     <- project metadata and dependencies
 └── README.md        <- project documentation
 
-
+```
 ## Features
 
+```bash 
 --> User Authentication: Sign up, login, and secure user sessions.
 --> Product Management: Add, edit, and manage product listings.
 --> Shopping Cart: Add items to the cart and proceed to checkout.
 --> Order Processing: Manage orders from creation to delivery.
-
+```
 Author
 - [Lelisa Yohanes](https://github.com/Lelisayohanes/)
+
 
 <h3 align="center">© 2024. All rights reserved.</h3>
