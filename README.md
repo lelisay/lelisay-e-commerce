@@ -29,7 +29,8 @@ To set up the development environment:
 
 ```bash
 npm install
-npm start 
+npm run dev
+
 
 ```
 
