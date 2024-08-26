@@ -1,6 +1,5 @@
 # E-Commerce Template
 
-![Build Status](https://github.com/YourUsername/ecommerce-template/actions/workflows/ci-build.yaml/badge.svg)
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-v16.13.0-green.svg)](https://nodejs.org/)
