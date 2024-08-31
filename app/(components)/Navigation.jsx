@@ -3,11 +3,14 @@
 import { useState, useEffect } from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import Link from 'next/link';
-import { useSession } from "next-auth/react";  // Import useSession
+import { useSession,signOut } from "next-auth/react";  // Import useSession
+import LogoutConfirmationModal from "../(components)/LogoutConfirmationModal"
 
 export default function Navigation() {
   const { data: session } = useSession();  // Get session data
   const [theme, setTheme] = useState("light");
+  const [showLogoutModal, setShowLogoutModal] = useState(false); // State to control the modal visibility
+
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -27,6 +30,20 @@ export default function Navigation() {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
     localStorage.setItem("theme", newTheme);
   };
+
+  const handleLogoutClick = () => {
+    setShowLogoutModal(true); // Show the confirmation modal
+  };
+
+  const handleConfirmLogout = () => {
+    setShowLogoutModal(false);
+    signOut({ callbackUrl: '/' }); // Perform the logout
+  };
+
+  const handleCancelLogout = () => {
+    setShowLogoutModal(false); // Hide the confirmation modal
+  };
+
 
   return (
     <header className="bg-gray-100 dark:bg-gray-800 shadow-lg">
@@ -51,9 +68,19 @@ export default function Navigation() {
             Public
           </Link>
           {session ? (
-            <Link href="/api/auth/signout?callbackUrl=/" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-              Logout
-            </Link>
+            <>
+              <button
+                onClick={handleLogoutClick}
+                className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Logout
+              </button>
+              <LogoutConfirmationModal
+                show={showLogoutModal}
+                onConfirm={handleConfirmLogout}
+                onCancel={handleCancelLogout}
+              />
+            </>
           ) : (
             <Link href="/auth/signIn" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
               Login
