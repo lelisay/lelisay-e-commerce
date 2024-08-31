@@ -1,6 +1,8 @@
-// components/LogoutConfirmationModal.js
+
+
 
 import React from 'react';
+
 
 const LogoutConfirmationModal = ({ show, onConfirm, onCancel }) => {
   if (!show) return null;
