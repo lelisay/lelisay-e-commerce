@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import Link from 'next/link';
 import { useSession,signOut } from "next-auth/react";  // Import useSession
-import LogoutConfirmationModal from "../(components)/LogoutConfirmationModal"
+import LogoutConfirmationModal from "../LogoutConfirmationModal"
 
 export default function Navigation() {
   const { data: session } = useSession();  // Get session data
@@ -55,7 +55,7 @@ export default function Navigation() {
           <Link href="/" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
             Home
           </Link>
-          <Link href="/CreateUser" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+          <Link href="/Users/CreateUser" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
             Create User
           </Link>
           <Link href="/ClientMember" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">

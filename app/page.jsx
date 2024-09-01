@@ -1,4 +1,4 @@
-"use client"; // This directive makes the component a Client Component
+"use client";
 
 import { useSession } from 'next-auth/react';
 
@@ -15,8 +15,7 @@ function MyComponent() {
 
   return (
     <div>
-      <p>Signed in as {session.user.email}</p>
-      {/* Additional content for authenticated users */}
+      <p>Signed in as {session.user.role}</p> {/* Ensure role is shown */}
     </div>
   );
 }
