@@ -17,6 +17,18 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        suse: ['SUSE', 'sans-serif'],
+      },
+      fontSize: {
+        large: '2.5rem',  // Adjust size as needed
+        middle: '1.5rem',    // Adjust size as needed
+        small: '0.875rem', // Adjust size as needed
+      },
+      fontWeight: {
+        extraBold: '800',  // Add custom font weight if needed
+        extraLight: '200', // Add custom font weight if needed
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

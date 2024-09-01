@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,8 +65,10 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: 'SUSE', sans-serif;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'SUSE', sans-serif;
   }
 }

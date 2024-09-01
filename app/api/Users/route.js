@@ -48,7 +48,7 @@ export async function POST(req) {
     if (!name || !email || !password) {
       return NextResponse.json({ message: 'All fields are required' }, { status: 400 });
     }
-
+o
     // Check for duplicate email
     const existingUser = await prisma.user.findUnique({
       where: { email },
@@ -77,3 +77,4 @@ export async function POST(req) {
     await prisma.$disconnect();
   }
 }
+
