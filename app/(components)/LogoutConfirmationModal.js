@@ -1,58 +1,27 @@
-
-
-
 import React from 'react';
-
 
 const LogoutConfirmationModal = ({ show, onConfirm, onCancel }) => {
   if (!show) return null;
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal">
-        <h2 className='text-cyan-800'>Are you sure you want to logout?</h2>
-        <div className="modal-actions">
-          <button onClick={onConfirm} className="confirm-button">Yes</button>
-          <button onClick={onCancel} className="cancel-button">No</button>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white dark:bg-gray-800 p-5 rounded-lg text-center">
+        <h2 className="text-cyan-800 dark:text-cyan-200">Are you sure you want to logout?</h2>
+        <div className="mt-5 flex justify-center space-x-4">
+          <button
+            onClick={onConfirm}
+            className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700"
+          >
+            Yes
+          </button>
+          <button
+            onClick={onCancel}
+            className="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700"
+          >
+            No
+          </button>
         </div>
       </div>
-      <style jsx>{`
-        .modal-backdrop {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .modal {
-          background-color: white;
-          padding: 20px;
-          border-radius: 8px;
-          text-align: center;
-        }
-        .modal-actions {
-          margin-top: 20px;
-        }
-        .confirm-button {
-          background-color: red;
-          color: white;
-          padding: 10px 20px;
-          margin-right: 10px;
-          border: none;
-          border-radius: 5px;
-        }
-        .cancel-button {
-          background-color: gray;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-        }
-      `}</style>
     </div>
   );
 };

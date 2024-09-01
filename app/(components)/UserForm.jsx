@@ -25,7 +25,6 @@ const UserForm = () => {
     e.preventDefault();
     setErrorMessage("");
 
-    console.log(formData);
     const res = await fetch("/api/Users", {
       method: "POST",
       body: JSON.stringify(formData),
@@ -44,17 +43,17 @@ const UserForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background dark:bg-secondary">
       <form
         onSubmit={handleSubmit}
         method="POST"
-        className="flex flex-col gap-5 w-full max-w-md p-8 bg-white shadow-lg rounded-lg"
+        className="flex flex-col gap-5 w-full max-w-md p-8 bg-card dark:bg-slate-900 shadow-lg rounded-lg transform transition-all duration-300 hover:scale-105 dark:text-slate-400"
       >
-        <h1 className="text-2xl font-bold text-gray-800 text-center mb-4">
+        <h1 className="text-3xl font-bold text-foreground text-center mb-4  dark:text-slate-400">
           Create New User
         </h1>
 
-        <label htmlFor="name" className="text-gray-700 font-semibold">
+        <label htmlFor="name" className="text-muted-foreground font-semibold">
           Full Name
         </label>
         <input
@@ -64,10 +63,11 @@ const UserForm = () => {
           onChange={handleChange}
           required={true}
           value={formData.name}
-          className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="p-3 border border-border rounded-md bg-background dark:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-muted-foreground transition duration-300 ease-in-out"
+          placeholder="Enter your full name"
         />
 
-        <label htmlFor="email" className="text-gray-700 font-semibold">
+        <label htmlFor="email" className="text-muted-foreground font-semibold">
           Email
         </label>
         <input
@@ -77,10 +77,11 @@ const UserForm = () => {
           onChange={handleChange}
           required={true}
           value={formData.email}
-          className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="p-3 border border-border rounded-md bg-background dark:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-muted-foreground transition duration-300 ease-in-out"
+          placeholder="Enter your email address"
         />
 
-        <label htmlFor="password" className="text-gray-700 font-semibold">
+        <label htmlFor="password" className="text-muted-foreground font-semibold">
           Password
         </label>
         <input
@@ -90,18 +91,19 @@ const UserForm = () => {
           onChange={handleChange}
           required={true}
           value={formData.password}
-          className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="p-3 border border-border rounded-md bg-background dark:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-muted-foreground transition duration-300 ease-in-out"
+          placeholder="Create a password"
         />
 
         <button
           type="submit"
-          className="w-full py-3 mt-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 ease-in-out"
+          className="w-full py-3 mt-4 bg-primary text-primary-foreground rounded-md hover:bg-opacity-90 hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ease-in-out dark:bg-slate-400"
         >
           Create User
         </button>
       </form>
       {errorMessage && (
-        <p className="mt-4 text-red-500">{errorMessage}</p>
+        <p className="mt-4 text-destructive animate-pulse">{errorMessage}</p>
       )}
     </div>
   );
