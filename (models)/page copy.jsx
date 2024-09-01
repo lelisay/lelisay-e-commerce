@@ -25,7 +25,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-full  bg-background dark:bg-secondary py-8 px-4 pt-32">
+    <div className="flex items-center justify-center h-80  bg-background dark:bg-secondary py-8 px-4 pt-32">
       <div className="bg-card dark:bg-slate-900 p-8 rounded-lg shadow-lg w-full max-w-md transform transition-all duration-300 hover:scale-105 overflow-hidden">
         <h1 className="text-3xl font-bold text-foreground text-center mb-6 dark:text-slate-400">
           Sign In
