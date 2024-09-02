@@ -1,9 +1,7 @@
-import { Inter } from "next/font/google";
 import Navigation from "../nav/Navigation";
 
 import AuthProvider from "../AuthProvider.js";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background dark:bg-slate-800`}>
+      <body className={`bg-background dark:bg-slate-800`}>
         <AuthProvider>
           <Navigation />
           Default

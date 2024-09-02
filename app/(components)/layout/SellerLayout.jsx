@@ -1,19 +1,24 @@
-"use client";
-
 import React from 'react';
-import { AuthProvider } from '../AuthProvider.js';
-import Navigation from "../nav/Navigation";
+import { useSidebar } from '../../context/SidebarContext'
+import SellerNavigation from "../nav/SellerNavigation.jsx";
 
 const SellerLayout = ({ children }) => {
+  const { isOpen } = useSidebar(); // Access sidebar state
+
   return (
-    <html lang="en">
-      <body className="bg-seller-background text-seller-text">
-        
-        <Navigation />
-         seller
-        <div className="seller-content">{children}</div>
-      </body>
-    </html>
+    <div className="flex min-h-screen">
+      {/* Sidebar */}
+      <SellerNavigation />
+
+      {/* Main content */}
+      <main
+        className={`transition-all duration-300 flex-grow p-4 ${
+          isOpen ? 'ml-64' : 'ml-20'
+        }`} // Adjust margin based on sidebar state
+      >
+        {children}
+      </main>
+    </div>
   );
 };
 
