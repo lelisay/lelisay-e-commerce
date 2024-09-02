@@ -61,9 +61,7 @@ export const options = {
             const match = await bcrypt.compare(credentials.password, foundUser.password);
   
             if (match) {
-              // Set additional attributes if needed, such as user role
-              foundUser.role = "User"; // Example of setting a role
-  
+              // Set additional attributes if needed, such as user role  
               // Return the user object
               return foundUser;
             }

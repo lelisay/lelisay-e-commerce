@@ -5,7 +5,7 @@ import { useSession, signOut } from "next-auth/react";
 import { Menu as HamburgerIcon, Sun, Moon, User, Settings, Database, Shield, LogOut } from "lucide-react";
 import LogoutConfirmationModal from "../LogoutConfirmationModal"; // Adjust the import path as needed
 
-export default function AdminNavigation() {
+export default function SellerNavigation() {
   const { isOpen, setIsOpen } = useSidebar(); // Access and set sidebar state
   const [theme, setTheme] = useState("light");
   const [showLogoutModal, setShowLogoutModal] = useState(false); // State to control the modal visibility

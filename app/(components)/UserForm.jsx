@@ -9,6 +9,7 @@ const UserForm = () => {
     name: "",
     email: "",
     password: "",
+    role:""
   });
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -93,6 +94,20 @@ const UserForm = () => {
           value={formData.password}
           className="p-3 border border-border rounded-md bg-background dark:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-muted-foreground transition duration-300 ease-in-out"
           placeholder="Create a password"
+        />
+
+        <label htmlFor="role" className="text-muted-foreground font-semibold">
+          Password
+        </label>
+        <input
+          id="role"
+          name="role"
+          type="text"
+          onChange={handleChange}
+          required={true}
+          value={formData.role}
+          className="p-3 border border-border rounded-md bg-background dark:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-muted-foreground transition duration-300 ease-in-out"
+          placeholder=" seller | admin | "
         />
 
         <button

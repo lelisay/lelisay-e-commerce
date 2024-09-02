@@ -16,6 +16,9 @@ export async function GET() {
   }
 }
 
+
+
+
 export async function DELETE(req) {
   try {
     const body = await req.json();
@@ -42,13 +45,13 @@ export async function DELETE(req) {
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, password } = body;
+    const { name, email, password,role } = body;
 
     // Validate input
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !role) {
       return NextResponse.json({ message: 'All fields are required' }, { status: 400 });
     }
-o
+
     // Check for duplicate email
     const existingUser = await prisma.user.findUnique({
       where: { email },
@@ -65,8 +68,10 @@ o
     const newUser = await prisma.user.create({
       data: {
         name,
+        role,
         email,
         password: hashedPassword, // Store the hashed password
+        
       },
     });
 
