@@ -9,18 +9,18 @@ export default withAuth(
     const token = req.nextauth.token;
     if (!token) {
       console.log("Token is undefined");
-      return NextResponse.rewrite(new URL("/DeniedPage"));
+      return NextResponse.rewrite(new URL("/DeniedPage", req.url));
     }
 
     // Now you can safely access the role
     console.log(token.role);
 
     if (
-      req.nextUrl.pathname.startsWith("/CreateUser") &&
+      req.nextUrl.pathname.startsWith("/Admin") &&
       token.role !== "admin"
     ) {
-      return NextResponse.rewrite(new URL("/DeniedPage",req.url));
-    } 
+      return NextResponse.rewrite(new URL("/DeniedPage", req.url));
+    }
 
     // Proceed if everything is fine
     return NextResponse.next();
@@ -32,4 +32,4 @@ export default withAuth(
   }
 );
 
-export const config = { matcher: ["/CreateUser"] };
+export const config = { matcher: ["/Admin/:path*", "/CreateUser"] };
