@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSidebar } from '../../context/SidebarContext'
+import React from "react";
+import { useSidebar } from "../../context/SidebarContext";
 import AdminNavigation from "../nav/AdminNavigation";
 
 const AdminLayout = ({ children }) => {
@@ -7,13 +7,14 @@ const AdminLayout = ({ children }) => {
 
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <AdminNavigation />
+      <div>
+        <AdminNavigation />
+      </div>
 
       {/* Main content */}
       <main
         className={`transition-all duration-300 flex-grow p-4 ${
-          isOpen ? 'ml-64' : 'ml-20'
+          isOpen ? "ml-64" : "ml-20"
         }`} // Adjust margin based on sidebar state
       >
         {children}
