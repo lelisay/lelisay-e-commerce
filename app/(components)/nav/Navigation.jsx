@@ -49,11 +49,11 @@ export default function Navigation() {
     <header className="bg-gray-100 dark:bg-gray-800 shadow-lg">
       <nav className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16">
         <div className="text-2xl font-bold text-gray-900 dark:text-white">
-          MyApp
+          EYY-LOGO
         </div>
         <div className="flex items-center gap-10">
-          <Link href="/" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-            Home
+          <Link href="/usersview/new" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+            New
           </Link>
           <Link href="/Users/CreateUser" className="text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
             Create User
@@ -86,7 +86,10 @@ export default function Navigation() {
               Login
             </Link>
           )}
-          <button onClick={toggleTheme} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-full">
+          
+        </div>
+        <div>
+        <button onClick={toggleTheme} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-full">
             {theme === "dark" ? (
               <SunIcon className="h-6 w-6" />
             ) : (
@@ -94,6 +97,7 @@ export default function Navigation() {
             )}
           </button>
         </div>
+
       </nav>
     </header>
   );

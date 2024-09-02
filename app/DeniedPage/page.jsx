@@ -6,7 +6,7 @@ const DeniedPage = () => {
     <div>
       <h1
       className='text-red-600'
-      >Denied Page</h1>
+      > You have no privilage Contact your administrator </h1>
     </div>
   )
 }
